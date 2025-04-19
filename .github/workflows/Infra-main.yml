@@ -107,5 +107,5 @@ jobs:
     
       - name: Upload Private Key to S3
         run: |
-          aws s3 cp ./Infra/modules/ec2/private_key.pem s3://your-bucket-name/private-key.pem
+          aws s3 cp ./Infra/modules/ec2/private_key.pem s3://techopsbucket123/private-key.pem
       
