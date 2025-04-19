@@ -27,9 +27,9 @@ No resources.
 |------|-------------|------|---------|:--------:|
 | <a name="input_ami"></a> [ami](#input\_ami) | The AMI to use for the instance | `string` | n/a | yes |
 | <a name="input_availability_zone"></a> [availability\_zone](#input\_availability\_zone) | The availability zone for the subnet | `string` | n/a | yes |
-| <a name="input_instance_type"></a> [instance\_type](#input\_instance\_type) | The instance type to use | `string` | `"t2.micro"` | no |
+| <a name="input_instance_type"></a> [instance\_type](#input\_instance\_type) | The instance type to use | `string` | `"t2.medium"` | no |
 | <a name="input_public_subnet_cidr"></a> [public\_subnet\_cidr](#input\_public\_subnet\_cidr) | The CIDR block for the public subnet | `string` | n/a | yes |
-| <a name="input_region"></a> [region](#input\_region) | aws region | `string` | n/a | yes |
+| <a name="input_region"></a> [region](#input\_region) | aws region | `string` | `"us-east-1"` | no |
 | <a name="input_vpc_cidr"></a> [vpc\_cidr](#input\_vpc\_cidr) | The CIDR block for the VPC | `string` | n/a | yes |
 
 ## Outputs
