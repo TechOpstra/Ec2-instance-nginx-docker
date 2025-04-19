@@ -79,7 +79,8 @@ jobs:
           output-file: README.md
           output-method: inject
           git-push: true
-          config-file: .terraform-docs.yml
+          config-file: Infra/.terraform-docs.yml
+        
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
