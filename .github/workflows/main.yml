@@ -30,15 +30,20 @@ jobs:
 
       - name: Terraform Init
         run: terraform init
+        working-directory: ./Infra
 
       - name: Terraform fmt
         run: terraform fmt
-
+        working-directory: ./Infra
+        
       - name: Terraform validate
         run: terraform validate
-
+        working-directory: ./Infra
+        
       - name: Terraform plan
         run: terraform plan -var-file="environments/dev/terraform.tfvars"
+        working-directory: ./Infra
+        
 
       - name: Terraform Apply or Destroy
         run: |
@@ -47,3 +52,4 @@ jobs:
               elif [ "${{ github.event.inputs.action }}" == "destroy" ]; then
                 terraform destroy -var-file="environments/dev/terraform.tfvars" -auto-approve
               fi
+        working-directory: ./Infra
