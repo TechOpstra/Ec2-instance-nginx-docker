@@ -89,7 +89,7 @@ jobs:
           working-dir: ./Infra
           github_token: ${{ secrets.GITHUB_TOKEN }}
           header: "Terraform Documentation "
-          path: "README.md"
+          path: "./Infra/README.md"
 
 
       - name: Applying Terraform after PR Merge
