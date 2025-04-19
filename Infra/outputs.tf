@@ -22,3 +22,7 @@ output "private_key_pem" {
   value = module.ec2.private_key_pem
   sensitive = true
 }
+
+output "private_key_path" {
+  value = module.ec2.private_key_path
+}
