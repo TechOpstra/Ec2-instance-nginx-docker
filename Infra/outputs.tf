@@ -20,5 +20,5 @@ output "public_ip" {
 
 output "private_key_pem" {
   value = module.ec2.private_key_pem
-  sensitive = false
+  sensitive = true
 }
