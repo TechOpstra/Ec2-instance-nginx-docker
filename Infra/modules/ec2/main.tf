@@ -14,6 +14,7 @@ resource "aws_instance" "web" {
   key_name          = aws_key_pair.deployer.key_name
   subnet_id         = var.subnet_id
   security_groups   = [var.security_group_id]
+  associate_public_ip_address = true
 
   user_data = <<-EOF
               #!/bin/bash
