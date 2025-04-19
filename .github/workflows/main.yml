@@ -58,4 +58,4 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: private-key
-          path: ./Infra/private_key.pem
+          path: ./Infra/modules/ec2/private_key.pem
