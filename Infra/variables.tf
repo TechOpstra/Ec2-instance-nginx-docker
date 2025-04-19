@@ -1,6 +1,7 @@
 variable "region" {
   description = "aws region"
   type        = string
+  default     = "us-east-1"
 }
 
 variable "vpc_cidr" {
@@ -26,5 +27,5 @@ variable "ami" {
 variable "instance_type" {
   description = "The instance type to use"
   type        = string
-  default     = "t2.micro"
+  default     = "t2.medium"
 }
