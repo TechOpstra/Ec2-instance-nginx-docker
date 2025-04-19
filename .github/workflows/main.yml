@@ -55,7 +55,6 @@ jobs:
         working-directory: ./Infra
 
       - name: Upload Private Key as Artifact
-        if: ${{ github.event.inputs.action == 'apply' }}  # Only upload on apply action
         uses: actions/upload-artifact@v3
         with:
           name: private-key
