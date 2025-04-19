@@ -43,7 +43,6 @@ jobs:
       - name: Terraform plan
         run: terraform plan -var-file="../environments/dev/terraform.tfvars"
         working-directory: ./Infra
-        
 
       - name: Terraform Apply or Destroy
         run: |
@@ -54,8 +53,17 @@ jobs:
               fi
         working-directory: ./Infra
 
+      - name: Verify private key creation
+        run: |
+          if [ -f ./Infra/modules/ec2/private_key.pem ]; then
+            echo "Private key created."
+          else
+            echo "Private key not found."
+            exit 1
+          fi
+
       - name: Upload Private Key as Artifact
-        if: ${{ github.event.inputs.action == 'apply' }}
+        if: ${{ github.event.inputs.action == 'apply' }}  # Only upload after apply
         uses: actions/upload-artifact@v3
         with:
           name: private-key
