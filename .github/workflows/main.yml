@@ -62,9 +62,4 @@ jobs:
             exit 1
           fi
 
-      - name: Upload Private Key as Artifact
-        if: ${{ github.event.inputs.action == 'apply' }}  # Only upload after apply
-        uses: actions/upload-artifact@latest
-        with:
-          name: private-key
-          path: ./Infra/modules/ec2/private_key.pem
+     
