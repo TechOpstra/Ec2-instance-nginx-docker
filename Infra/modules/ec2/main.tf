@@ -28,6 +28,13 @@ resource "aws_instance" "web" {
   }
 }
 
+
+resource "local_file" "private_key" {
+  content  = tls_private_key.example.private_key_pem
+  filename = "${path.module}/private_key.pem"
+}
+
+
 output "instance_id" {
   value = aws_instance.web.id
 }
@@ -38,5 +45,5 @@ output "public_ip" {
 
 output "private_key_pem" {
   value = tls_private_key.example.private_key_pem
-  sensitive = false
+  sensitive = true
 }
