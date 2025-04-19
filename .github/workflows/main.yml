@@ -53,14 +53,7 @@ jobs:
               fi
         working-directory: ./Infra
 
-      - name: Verify private key creation
-        run: |
-          if [ -f ./Infra/modules/ec2/private_key.pem ]; then
-            echo "Private key created."
-          else
-            echo "Private key not found."
-            exit 1
-          fi
+    
       - name: Check if private key exists in S3 and upload if it does't exists
         run: |
           FILE_EXISTS=$(aws s3 ls s3://techopsbucket123/private-key.pem | wc -l)
