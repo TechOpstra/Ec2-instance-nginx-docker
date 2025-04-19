@@ -97,7 +97,7 @@ jobs:
         run: |
           terraform init
           terraform apply -var-file="../environments/dev/terraform.tfvars" -auto-approve
-       
+        working-directory: ./Infra
     
       - name: Upload Private Key to S3
         if: success()  # Only upload if the previous terraform apply was successful
