@@ -75,10 +75,11 @@ jobs:
         if: github.event_name == 'push' || github.event_name == 'pull_request'
         uses: terraform-docs/gh-actions@v1.3.0
         with:
+          working-dir: ./Infra
           output-file: README.md
           output-method: inject
           git-push: true
-          config-file: Infra/.terraform-docs.yml
+          config-file: .terraform-docs.yml
         
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
