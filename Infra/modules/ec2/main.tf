@@ -1,19 +1,19 @@
 resource "tls_private_key" "example" {
   algorithm = "RSA"
-  rsa_bits = 4096
+  rsa_bits  = 4096
 }
 
 resource "aws_key_pair" "deployer" {
-  key_name = "my-key"
+  key_name   = "my-key"
   public_key = tls_private_key.example.public_key_openssh
 }
 
 resource "aws_instance" "web" {
-  ami = var.ami
-  instance_type = var.instance_type
-  key_name = aws_key_pair.deployer.key_name
-  subnet_id = var.subnet_id
-  security_groups = [var.security_group_id]
+  ami               = var.ami
+  instance_type     = var.instance_type
+  key_name          = aws_key_pair.deployer.key_name
+  subnet_id         = var.subnet_id
+  security_groups   = [var.security_group_id]
 
   user_data = <<-EOF
               #!/bin/bash
@@ -28,11 +28,11 @@ resource "aws_instance" "web" {
   }
 }
 
-
 resource "local_file" "private_key" {
-  content  = tls_private_key.example.private_key_pem
-  filename = "${path.module}/private_key.pem"
+  content  = tls_private_key.example.private_key_pem
+  filename = "${path.module}/private_key.pem"
 }
+
 
 
 output "instance_id" {
