@@ -34,6 +34,9 @@ resource "local_file" "private_key" {
   filename = "${path.module}/private_key.pem"
 }
 
+output "private_key_path" {
+  value = local_file.private_key.filename
+}
 
 
 output "instance_id" {
