@@ -1,5 +1,4 @@
-name: Terraform Infra
-
+name: infra creation
 on:
   workflow_dispatch:
     inputs:
