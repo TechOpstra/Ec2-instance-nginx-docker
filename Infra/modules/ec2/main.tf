@@ -18,10 +18,11 @@ resource "aws_instance" "web" {
 
   user_data = <<-EOF
               #!/bin/bash
-              sudo apt update -y
-              sudo apt install nginx -y
-              systemctl enable nginx
-              systemctl start nginx
+              sudo apt-get update -y
+              sudo apt-get install -y docker.io
+              sudo systemctl enable docker
+              sudo systemctl start docker
+              sudo docker run -dp 8080:8080 nginx
               EOF
 
   tags = {
