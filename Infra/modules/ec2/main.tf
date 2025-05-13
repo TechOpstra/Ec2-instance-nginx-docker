@@ -22,7 +22,7 @@ resource "aws_instance" "web" {
               sudo apt-get install -y docker.io
               sudo systemctl enable docker
               sudo systemctl start docker
-              sudo docker run -dp 8080:8080 nginx
+              sudo docker run -dp 80:80 nginx
               EOF
 
   tags = {
