@@ -1,10 +1,11 @@
 terraform {
-  required_version = ">= 1.1.0"
+  required_version = ">= 1.10.0"
+
   backend "s3" {
-    bucket         = "techopsbucket123"
-    key            = "vpcec2/terraform.tfstate10"
-    region         = "us-east-1"
-    encrypt        = true
-    dynamodb_table = "demo_table123"
+    bucket       = "techopsbucket123"
+    key          = "vpcec2/terraform.tfstateec21"
+    region       = "us-east-1"
+    encrypt      = true
+    use_lockfile = true
   }
 }
