@@ -110,8 +110,9 @@ jobs:
          fi
 
 
-      - name: Convert Plan to JSON
-        run: terraform show -json ./Infra/tfplan.binary > ./Infra/tfplan.json
+      - name: Convert Plan to JSON (debug)
+        run: terraform show -json ./Infra/tfplan.binary > ./tfplan.json
+
 
       - name: Verify tfplan.json
         run: cat ./Infra/tfplan.json 
